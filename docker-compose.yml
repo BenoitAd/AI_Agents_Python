@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"  # Redirige le port 5000 du conteneur vers le port 5000 de la machine hôte
+    volumes:
+      - .:/app  # Permet de monter le répertoire de l'application dans le conteneur
+    environment:
+      - FLASK_ENV=development  # Définir l'environnement Flask
+      - FLASK_APP=main.py  # fichier principal de l'application
