@@ -48,5 +48,24 @@ The API will be available on port 5000.
   2: Emotional support.
   3: Cybersecurity advice.
 
+### Configuration
+
+- The AI agents are configured to respond in French. If you want the agents to reply in a different language, update their context in the `main.py` file by adjusting the relevant language settings.
+  
+- To change the API port, modify the `docker-compose.yml` file or the Dockerfile:
+  - In `docker-compose.yml`, update the following line to set a new port:
+    ```yaml
+    ports:
+      - "5000:5000"
+    ```
+    Replace `5000` with your desired port number.
+
+  - Alternatively, in the Dockerfile, you can update the `EXPOSE` command if necessary:
+    ```dockerfile
+    EXPOSE 5000
+    ```
+    Replace `5000` with the port of your choice.
+
+
 ### Contact
 For inquiries, contact me on Linkedin: https://www.linkedin.com/in/benoit-auger-dubois-788082276/
