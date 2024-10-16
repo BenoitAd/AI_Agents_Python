@@ -2,6 +2,7 @@ import os
 from flask import Flask, request, jsonify
 from crewai import Agent, Task, Crew
 from dotenv import load_dotenv
+from flask_cors import CORS
 import logging
 
 # Désactiver les logs de l'API OpenTelemetry
@@ -15,6 +16,7 @@ os.environ["OPENAI_MODEL_NAME"] = os.getenv("OPENAI_MODEL_NAME")
 
 # Initialiser l'application Flask
 app = Flask(__name__)
+CORS(app)  # Activer CORS pour toutes les routes
 
 # Configuration de l'agent juridique
 agent_juridique = Agent(
